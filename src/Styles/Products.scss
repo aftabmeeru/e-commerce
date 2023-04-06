@@ -1,0 +1,86 @@
+.product-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2.5rem 10rem;
+
+
+        > .search {
+            width: 100%;
+            text-align: center;
+            
+            > input {
+                font-size: 1.5rem;
+                padding: 1rem .5rem;
+                letter-spacing: 2px;
+                background-color: rgb(240, 240, 240);
+                border: 1px solid rgb(240, 240, 240);
+                border-radius: 5px;
+                outline: none;
+                width: 50%;
+            }
+        }
+
+    > .products {
+        height: 70vh;
+        padding: 5rem 0;
+        // border: 1px solid black;
+        overflow-y: scroll;
+
+        > .product {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+    
+            > .product {
+                display: flex;
+                flex-direction: column;
+    
+                > .product-img {
+                    display: flex;
+                    width: 27.5rem;
+                    height: 18rem;
+            
+                    > img {
+                        width: 100%;
+                    }
+                }
+        
+                > .name-price {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 1.5rem 0;
+        
+                    > h5 {
+                        font-size: 1.8rem;
+                        color: rgb(66, 66, 66);
+                        letter-spacing: 1px;
+                        font-weight: 500;
+                    }
+        
+                    > p {
+                        font-size: 1.8rem;
+                        color: rgb(66, 66, 66);
+                    }
+                }
+
+                > .add-to-cart > button {
+                    background-color: brown;
+                    border: 1px solid brown;
+                    color: white;
+                    width: 100%;
+                    padding: 1rem 0;
+                    font-size: 1.3rem;
+                    letter-spacing: 1.5px;
+                    word-spacing: 4px;
+                    cursor: pointer;
+                    transition: all .5s;
+
+                    &:hover {
+                        background-color: rgb(130, 0, 0);
+                    }
+                }
+            }
+        }
+    }
+}
