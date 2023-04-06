@@ -77,10 +77,6 @@
                 }
             }
 
-            > .border-bottom {
-                border-bottom: 1px solid black;
-            }
-
             > .count {
                 display: flex;
                 font-size: 1.5rem;
@@ -106,7 +102,7 @@
                 border: 1px solid brown;
                 color: white;
                 border-radius: 5px;
-                margin-left: 1.5rem;
+                margin: 2rem 0;
                 cursor: pointer;
             }
         }

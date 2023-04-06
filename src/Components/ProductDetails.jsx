@@ -2,33 +2,16 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from './Context';
 
-import { FaPlus } from 'react-icons/fa'; 
-import { FaMinus } from 'react-icons/fa';
-
 import '../Styles/ProductDetails.scss';
 
 const ProductDetails = () => {
 
-    const { state: { singleProduct } } = useContext(CartContext);
-
-    console.log(singleProduct);
+    const { state: { singleProduct },dispatch } = useContext(CartContext);
     
     const navigate = useNavigate();
     const backToProductsBtn = () => {
         navigate('/product');
     }
-    
-    // const [count, setCount] = useState(1);
-    // function increment() {
-    //     if(count < 3) {
-    //         setCount(count + 1);
-    //     }
-    //     return count;
-    // }
-    // function decrement() {
-    //     if(count > 1) setCount(count - 1);
-    //     return count;
-    // }
 
   return (
     <>
@@ -52,16 +35,17 @@ const ProductDetails = () => {
                         <h3>SKU :</h3>
                         <p>RecQ0fMd8T0Vk211E</p>
                     </div>
-                    <div className="available border-bottom">
+                    <div className="available">
                         <h3>Brand :</h3>
                         <p>Liddy</p>
                     </div>
-                    <div className="count">
-                        <p> <FaMinus /> </p>
-                        <p className='count-nbr'> 1 </p>
-                        <p> <FaPlus /> </p>
-                    </div>
-                    <button className="add-to-cart">ADD TO CART</button>
+                    <button className="add-to-cart"
+                    onClick={ () => {
+                        dispatch({
+                            type: "ADD_TO_CART",
+                            payload: singleProduct,
+                        })
+                    }}>ADD TO CART</button>
                 </div>
             </div>
         </div>   

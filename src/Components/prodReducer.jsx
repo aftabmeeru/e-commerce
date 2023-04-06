@@ -23,19 +23,43 @@ const prodReducer = (state, action) => {
                 ...state,
                 singleProduct: { ...action.payload }
             }
-
+   
         case "INCREMENT":
-            return {
-                ...state,
-                qty: action.payload.id ? action.payload.qty + 1 : action.payload.qty
-            }
-            
+            let incrementProduct = state.cart.map((currElm) => {
+                if(currElm.id === action.payload) {
+                    let incQty = currElm.qty + 1;
+                    
+                    if(incQty  >= currElm.stock) {
+                        incQty = currElm.stock;
+                    }
+                    
+                    return {
+                        ...currElm,
+                        qty: incQty,
+                    }
+                } else return currElm;
+                
+            })
+            return { ...state, cart: incrementProduct };
+                
         case "DECREMENT":
-            return {
-                ...state,
-                qty: action.payload - 1
-            }
-    
+            let decrementProduct = state.cart.map((currElm) => {
+                if(currElm.id === action.payload) {
+                    let decQty = currElm.qty - 1
+
+                    if(decQty  <= 1) {
+                        decQty = 1;
+                    }
+
+                    return {
+                        ...currElm,
+                        qty: decQty,
+                    }
+                } else return currElm;
+
+            })
+            return { ...state, cart: decrementProduct };
+
         default:
             return state;
     }

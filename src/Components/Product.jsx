@@ -7,8 +7,6 @@ const Product = () => {
     const { 
         state: { products }, 
         dispatch, 
-        setAmount,
-        setProdId,
     } = useContext(CartContext);
 
     const productDetails = useNavigate();
@@ -52,9 +50,8 @@ const Product = () => {
                                                     type: "ADD_TO_CART",
                                                     payload: product,
                                                 })
-                                                setAmount(product.stock)
-                                                setProdId(product.id)
-                                            }}>
+                                            }}
+                                        >
                                             ADD TO CART
                                         </button>
                                     </div>

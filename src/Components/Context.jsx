@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useState } from 'react';
+import React, { createContext, useReducer } from 'react';
 import { productList } from '../Components/ProductList';
 import reducer from '../Components/prodReducer';
 
@@ -10,20 +10,21 @@ const initialState = {
     products: productList,
     cart: [],
     singleProduct: [],
-    qty: 1,
-    min: 0,
-    max: 3
 }
 
 const Context = ({ children }) => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const [amount, setAmount] = useState();
-    const [prodId, setProdId] = useState();
+    const increment = (id) => {
+        dispatch({ type: "INCREMENT", payload: id })
+    }
+    const decrement = (id) => {
+        dispatch({ type: "DECREMENT", payload: id })
+    }
 
     return (
-        <CartContext.Provider value = { { state, dispatch, amount, setAmount, prodId, setProdId } } >
+        <CartContext.Provider value = { { state, dispatch, increment, decrement } } >
             { children }
         </CartContext.Provider>
     );

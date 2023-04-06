@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { FaPlus } from 'react-icons/fa'; 
@@ -13,30 +13,14 @@ const Cart = () => {
     let { 
         state: { cart },
         dispatch,
-        amount,
-        prodId
+        increment,
+        decrement,
     } = useContext(CartContext); 
-
-    const [qty, setQty] = useState(1);
 
     const navigate = useNavigate();
     const continueShopping = () => {
         navigate('/product');
     }
-
-    let [id] = cart.map(curr => curr.id);
-
-    
-    console.log(id);
-    console.log(prodId);
-
-    const increment = () => {
-        qty < amount ? setQty(qty + 1) : setQty(amount);
-    }
-    
-    const decrement = () => {
-        qty > 1 ? setQty(qty - 1) : setQty(1);
-    }    
 
     return (
         <>
@@ -58,11 +42,11 @@ const Cart = () => {
                                 </div>
                                 <p className='price'>${ prod.price }</p>
                                 <div className="quantity">
-                                    <span onClick={ decrement }> <FaMinus /> </span>
-                                    <span className='count'> { qty } </span>
-                                    <span onClick={ increment }> <FaPlus /> </span>
+                                    <span onClick={ () => decrement(prod.id) }> <FaMinus /> </span>
+                                    <span className='count'> { prod.qty } </span>
+                                    <span onClick={ () => increment(prod.id) }> <FaPlus /> </span>
                                 </div>
-                                <p className='subtotal'>  </p>
+                                <p className='subtotal'> { (prod.price * prod.qty).toFixed(2) } </p>
                                 <button className='trash-btn'
                                     onClick={() => {
                                         dispatch({
