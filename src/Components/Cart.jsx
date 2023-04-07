@@ -11,7 +11,7 @@ import { CartContext } from './Context';
 const Cart = () => {
 
     let { 
-        state: { cart },
+        state: { cart, total_price, shipping_fee },
         dispatch,
         increment,
         decrement,
@@ -85,15 +85,15 @@ const Cart = () => {
                         <div className="total">
                             <div className="subtotal">
                                 <p>Subtotal :</p>
-                                <p>$230.00</p>
+                                <p> ${ total_price.toFixed(2) } </p>
                             </div>
                             <div className="shipping">
                                 <p>Shipping Fee :</p>
-                                <p>$230.00</p>
+                                <p> ${ shipping_fee.toFixed(2) } </p>
                             </div>
                             <div className="order-total">
                                 <h3>Order Total :</h3>
-                                <h3>$290.00</h3>
+                                <h3> ${ (total_price + shipping_fee).toFixed(2) } </h3>
                             </div>
                         </div>
                         <button className="login">LOGIN</button>

@@ -83,6 +83,14 @@ const prodReducer = (state, action) => {
             })
             return { ...state, cart: decrementProduct };
 
+        case "TOTAL_PRICE":
+            let total_price = state.cart.reduce((accum, currPrice) => {
+                let { price, qty } = currPrice;
+                accum = accum + price * qty;
+                return accum;
+            }, 0)
+            return { ...state, total_price }
+
         default:
             return state;
     }
