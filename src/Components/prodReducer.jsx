@@ -1,10 +1,35 @@
 const prodReducer = (state, action) => {
     switch (action.type) {
         case "ADD_TO_CART": 
-            return {
-                ...state,
-                cart: [...state.cart, { ...action.payload }],
+
+            let existingProduct = state.cart.find(currElm => currElm.id === action.payload.id);
+
+            if(existingProduct) {
+                let updatedProduct = state.cart.map((currProd) => {
+                    if(currProd.id === action.payload.id) {
+                        let newQty = currProd.qty + action.payload.qty;
+
+                        if(newQty >= action.payload.stock) {
+                            newQty = action.payload.stock;
+                        }
+                        
+                        return {
+                            ...currProd,
+                            qty: newQty
+                        }
+                    } else return currProd;
+                })
+                return {
+                    ...state,
+                    cart: updatedProduct,
+                }
+            } else {
+                return {
+                    ...state,
+                    cart: [...state.cart, { ...action.payload }],
+                }
             }
+
 
         case "REMOVE_FROM_CART":
             return {
@@ -37,8 +62,7 @@ const prodReducer = (state, action) => {
                         ...currElm,
                         qty: incQty,
                     }
-                } else return currElm;
-                
+                } else return currElm;  
             })
             return { ...state, cart: incrementProduct };
                 
@@ -56,7 +80,6 @@ const prodReducer = (state, action) => {
                         qty: decQty,
                     }
                 } else return currElm;
-
             })
             return { ...state, cart: decrementProduct };
 
