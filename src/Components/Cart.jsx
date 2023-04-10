@@ -85,15 +85,15 @@ const Cart = () => {
                         <div className="total">
                             <div className="subtotal">
                                 <p>Subtotal :</p>
-                                <p> ${ total_price.toFixed(2) } </p>
+                                <p> ${ Number(total_price).toFixed(2) } </p>
                             </div>
                             <div className="shipping">
                                 <p>Shipping Fee :</p>
-                                <p> ${ shipping_fee.toFixed(2) } </p>
+                                <p> ${ shipping_fee } </p>
                             </div>
                             <div className="order-total">
                                 <h3>Order Total :</h3>
-                                <h3> ${ (total_price + shipping_fee).toFixed(2) } </h3>
+                                <h3> ${ Number(total_price + shipping_fee).toFixed(2) } </h3>
                             </div>
                         </div>
                         <button className="login">LOGIN</button>

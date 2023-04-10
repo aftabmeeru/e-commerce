@@ -1,8 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from './Context';
 
 const Product = () => {
+
+    const [search, setSearch] = useState("");
 
     const { 
         state: { products }, 
@@ -18,13 +20,26 @@ const Product = () => {
         <>
             <div className="product-container">
                 <div className="search">
-                    <input type="text" placeholder='Search' />
+                    <form onSubmit={(e) => e.preventDefault()} >
+                        <input 
+                            type="text" 
+                            placeholder='Search' 
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                    </form>
                 </div>
 
                 <div className="products">
                     <div className="product">
                         {
-                            products.map((product) => (
+                            products.filter((product) => {
+                                if(search === "") {
+                                    return product;
+                                } else if(product.name.toLowerCase().includes(search.toLowerCase())) {
+                                    return product;
+                                }
+                                return "";
+                            }).map((product) => (
                                 <div className="product" key={product.id} >
                                     <div className="product-img">
                                         <img

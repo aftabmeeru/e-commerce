@@ -8,7 +8,7 @@
             width: 100%;
             text-align: center;
             
-            > input {
+            > form > input {
                 font-size: 1.5rem;
                 padding: 1rem .5rem;
                 letter-spacing: 2px;
@@ -23,7 +23,6 @@
     > .products {
         height: 70vh;
         padding: 5rem 0;
-        // border: 1px solid black;
         overflow-y: scroll;
 
         > .product {
