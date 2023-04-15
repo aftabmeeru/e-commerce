@@ -1,4 +1,7 @@
 nav {
+    position: sticky; top: 0;
+    width: 100%;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,8 +9,10 @@ nav {
     width: 100%;
     padding: 1rem 5rem;
     border-bottom: 1px solid black;
+    z-index: 999;
 
     > .brand {
+        position: absolute;
         font-size: 3rem;
     }
 
@@ -15,7 +20,7 @@ nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 3rem;
+        gap: 8rem;
 
         > .links > ul {
             display: flex;
@@ -74,6 +79,10 @@ nav {
         > .close-menu {
             display: none;
         }
+    }
+
+    > .mobile-menu {
+        visibility: hidden;
     }
         
     > .open-menu {

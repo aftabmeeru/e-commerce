@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.scss';
 import './Mobile/Responsive.scss';
-import MobileMenu from "./Components/MobileMenu";
 
 function App() {
 
@@ -40,7 +39,6 @@ function App() {
               <ProductDetails /> 
             } 
           /> 
-          <Route path="/mobile" element={ <MobileMenu /> } />
         </Routes>
         <Footer />
       </Router>
