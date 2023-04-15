@@ -6,9 +6,18 @@ import '../Styles/Products.scss';
 
 export const CartContext = createContext();
 
+const getLocalStorageData = () => {
+    let localStorageData = localStorage.getItem("cart");
+    if(localStorageData === []) {
+        return [];
+    } else {
+        return JSON.parse(localStorageData);
+    }
+}
+
 const initialState = {
     products: productList,
-    cart: [],
+    cart: getLocalStorageData(),
     singleProduct: [],
     total_price: "",
     shipping_fee: 10.00,
@@ -27,6 +36,7 @@ const Context = ({ children }) => {
 
     useEffect(() => {
         dispatch({ type: "TOTAL_PRICE" });
+        localStorage.setItem("cart", JSON.stringify(state.cart));
     }, [state.cart]);
 
     return (

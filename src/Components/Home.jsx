@@ -47,7 +47,7 @@ const Home = () => {
 
         <div className="custom-container">
         <div className="custom">
-            <div className="content">
+            <div className="custom-content">
                 <h1>Custom Furniture <br />Built Only For You</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur.    

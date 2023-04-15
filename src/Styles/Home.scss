@@ -1,17 +1,14 @@
 .Home-container {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // flex-direction: column;
 
     > .home-main {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 90vh;
+        width: 100vw;
 
         > .content {
-            width: 50vw;
+            width: 50%;
             display: flex;
             flex-direction: column;
             padding: 10rem;
@@ -49,7 +46,7 @@
         }
     
         > .banner {
-            width: 50vw;
+            width: 50%;
             position: relative;
             
     
@@ -98,11 +95,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
             gap: 4rem;
     
             > .product {
                 height: 23rem;
                 width: 35rem;
+                padding: 0 1rem;
     
                 > img {
                     height: 100%;
@@ -144,7 +143,7 @@
         > .custom {
             width: 90%;
     
-            > .content {
+            > .custom-content {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;

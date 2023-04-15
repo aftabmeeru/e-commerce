@@ -1,0 +1,28 @@
+.mobile-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+
+    > .brand > h1 {
+        font-size: 4rem;
+    }
+
+    > .links {
+
+        > ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            font-size: 1.7rem;
+    
+            > a {
+                color: black;
+                cursor: pointer;
+            }
+        }
+    }
+}
