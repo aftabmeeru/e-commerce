@@ -14,20 +14,19 @@ const MobileMenu = ({setShowMenu}) => {
         <div className="menu-list">
             <div className="links">
                 <ul>
-                    <Link to="/" >Home</Link>
-                    <Link to="about" >About</Link>
-                    <Link to="product" >Products</Link>
-                    <Link to="mobile" >Mobile</Link>
+                    <Link onClick={() => setShowMenu(false)} to="/" >Home</Link>
+                    <Link onClick={() => setShowMenu(false)} to="about" >About</Link>
+                    <Link onClick={() => setShowMenu(false)} to="product" >Products</Link>
                 </ul>
             </div>
             <div className="cart-login">
-                <Link to="cart">
+                <Link onClick={() => setShowMenu(false)} to="cart">
                     <div className="cart">
                         <span className='mob-cart'>Cart</span> <FaShoppingCart /> 
                         <span id='cart-count'> { cart.length } </span> 
                     </div>
                 </Link>
-                <Link to="login">
+                <Link onClick={() => setShowMenu(false)} to="login">
                     <div className="login">
                         <span className='mob-login'>Login</span> <FaUserPlus /> 
                     </div>
