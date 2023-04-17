@@ -180,6 +180,18 @@
             width: 30rem;
         }
     } 
+    .product-container > .search > form > input {
+        width: 65%;
+    }
+    .cart-container {
+        > .cart-head > .cart-unhide {
+            display: block;
+        } 
+
+        .cart-hide {
+            display: none;
+        }
+    }
 }
 
 @media screen and (max-width: 619px) {
@@ -194,5 +206,11 @@
                 min-width: 26.9rem;
             }
         }
+    }
+    .about-container > .banner-img {
+        height: 50%;
+    }
+    .product-container > .search > form > input {
+        width: 75%;
     }
 }

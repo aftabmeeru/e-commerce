@@ -24,6 +24,10 @@
     > .cart-head {
         @include cartCommon();
         border-bottom: 1px solid black;
+
+        > .cart-unhide {
+            display: none;
+        }
     }
 
     .cart-details-container > .cart-details {

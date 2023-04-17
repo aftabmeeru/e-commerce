@@ -27,9 +27,10 @@ const Cart = () => {
             <div className="cart-container">
                 <div className="cart-head">
                     <p>Item</p>    
-                    <p>Price</p>    
+                    <p className='cart-hide'>Price</p>    
                     <p>Quantity</p>    
-                    <p>Subtotal</p>    
+                    <p className='cart-hide'>Subtotal</p>  
+                    <p className='cart-unhide'></p>
                 </div>    
 
                 <div className="cart-details-container">
@@ -40,13 +41,13 @@ const Cart = () => {
                                     <img src={ prod.img } alt={ prod.name } />
                                     <p>{ prod.name }</p>
                                 </div>
-                                <p className='price'>${ prod.price }</p>
+                                <p className='price cart-hide'>${ prod.price }</p>
                                 <div className="quantity">
                                     <span onClick={ () => decrement(prod.id) }> <FaMinus /> </span>
                                     <span className='count'> { prod.qty } </span>
                                     <span onClick={ () => increment(prod.id) }> <FaPlus /> </span>
                                 </div>
-                                <p className='subtotal'> { (prod.price * prod.qty).toFixed(2) } </p>
+                                <p className='subtotal cart-hide'> { (prod.price * prod.qty).toFixed(2) } </p>
                                 <button className='trash-btn'
                                     onClick={() => {
                                         dispatch({
