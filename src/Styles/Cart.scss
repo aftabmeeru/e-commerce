@@ -28,11 +28,18 @@
         > .cart-unhide {
             display: none;
         }
+
+        > .trash {
+            position: absolute;
+            right: 0;
+        }
     }
 
     .cart-details-container > .cart-details {
         @include cartCommon();
         position: relative;
+        text-align: center;
+        padding-left: 4%;
 
         > .img-name {
             display: flex;
