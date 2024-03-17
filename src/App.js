@@ -8,7 +8,7 @@ import Login from "./Components/Login";
 import ProductDetails from "./Components/ProductDetails";
 import Footer from "./Components/Footer";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.scss';
 import './Mobile/Responsive.scss';
