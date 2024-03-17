@@ -8,7 +8,7 @@ export const CartContext = createContext();
 
 const getLocalStorageData = () => {
     let localStorageData = localStorage.getItem("cart");
-    if(localStorageData === []) {
+    if(localStorageData === 'null') {
         return [];
     } else {
         return JSON.parse(localStorageData);
@@ -24,7 +24,7 @@ const initialState = {
 }
 
 const Context = ({ children }) => {
-
+    
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const increment = (id) => {

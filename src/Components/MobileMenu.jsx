@@ -23,7 +23,7 @@ const MobileMenu = ({setShowMenu}) => {
                 <Link onClick={() => setShowMenu(false)} to="cart">
                     <div className="cart">
                         <span className='mob-cart'>Cart</span> <FaShoppingCart /> 
-                        <span id='cart-count'> { cart.length } </span> 
+                        <span id='cart-count'> { cart === null ? 0 : cart.length } </span> 
                     </div>
                 </Link>
                 <Link onClick={() => setShowMenu(false)} to="login">

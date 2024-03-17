@@ -1,10 +1,8 @@
 @mixin cartCommon() {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 2rem;
-    color: rgb(66, 66, 66);
-    padding: 2.5rem 0;
+    padding: 2rem 0 2rem 7.5rem;
+    font-size: 1.6rem;
+    border-bottom: 1px solid black;
 }
 
 @mixin clearContinue($border, $background, $color) {
@@ -19,69 +17,57 @@
 }
 
 .cart-container {
-    padding: 5rem;
+    padding-top: 3rem;
 
     > .cart-head {
         @include cartCommon();
-        border-bottom: 1px solid black;
+        justify-content: space-between;
+        font-weight: bold;
 
-        > .cart-unhide {
-            display: none;
+        > .wid-25 {
+            width: 25%;
         }
 
-        > .trash {
-            position: absolute;
-            right: 0;
+        > .item {
+            padding-left: 3rem;
         }
     }
 
-    .cart-details-container > .cart-details {
-        @include cartCommon();
-        position: relative;
-        text-align: center;
-        padding-left: 4%;
-
-        > .img-name {
-            display: flex;
+    .cart-details-container {
+        > .cart-details {
+            @include cartCommon();
             align-items: center;
-            margin-left: -11rem;
 
-            > img {
-                border: 1px solid black;
-                height: 7.5rem;
-                width: 7.5rem;
-                border-radius: 5px;
-                margin-right: 1rem;
+            > .img-name {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                width: 25%;
+    
+                > img {
+                    width: 5rem;
+                    height: 5rem;
+                }
             }
-        }
 
-        > .quantity {
-            display: flex;
-            align-items: center;
+            > .quantity {
+                display: flex;
+                gap: 1.5rem;
+            }
 
-            > span {
-                margin: 0 1rem;
-                font-weight: bold;
+            > .wid-25 {
+                width: 25%;
+            }
+
+            > .trash-btn {
+                position: absolute;
+                right: 2rem;
+                border: none;
+                color: brown;
+                font-size: 3rem;
+                background: none;
                 cursor: pointer;
             }
-
-            > .count {
-                font-size: 3rem;
-            }
-        }
-
-        > .subtotal {
-            width: 10%;
-        }
-
-        > .trash-btn {
-            position: absolute;
-            right: 0;
-            border: none;
-            color: brown;
-            font-size: 3rem;
-            background: none;
-            cursor: pointer;
         }
     }
 
@@ -89,8 +75,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5rem 0;
-        border-top: 1px solid black;
+        padding: 5rem 1rem;
 
         > .continue-shopping {
             @include clearContinue(brown, brown, white);
@@ -104,6 +89,7 @@
     > .total-container {
         display: flex;
         justify-content: flex-end;
+        padding: 0 1rem;
 
         > .full-total {
             width: 40%;
@@ -148,6 +134,7 @@
                 border: 1px solid brown;
                 border-radius: 3px;
                 padding: .7rem;
+                margin-bottom: 2rem;
                 cursor: pointer;
             }
         }

@@ -13,8 +13,6 @@ const Home = () => {
 
     const { state: { cart } } = useContext(CartContext);
 
-    console.log(showMenu);
-
   return (
     <nav>
         <div className={`mobile-menu ${showMenu ? "mobile-menu-open" : ""}`}>
@@ -35,7 +33,7 @@ const Home = () => {
                 <Link to="cart">
                     <div className="cart">
                         <span className='mob-cart'>Cart</span> <FaShoppingCart /> 
-                        <span id='cart-count'> { cart.length } </span> 
+                        <span id='cart-count'> { cart === null ? 0 : cart.length } </span> 
                     </div>
                 </Link>
                 <Link to="login">

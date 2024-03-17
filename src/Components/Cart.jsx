@@ -26,29 +26,28 @@ const Cart = () => {
         <>
             <div className="cart-container">
                 <div className="cart-head">
-                    <p className='item'>Item</p>    
-                    <p className='cart-hide'>Price</p>    
-                    <p>Quantity</p>    
-                    <p className='cart-hide'>Subtotal</p>  
+                    <p className='item wid-25'>Item</p>    
+                    <p className='cart-hide wid-25'>Price</p>    
+                    <p className='qty wid-25'>Quantity</p>    
+                    <p className='cart-hide wid-25'>Subtotal</p>  
                     <p className='cart-unhide'></p>
-                    <p className='trash'></p>
                 </div>    
 
                 <div className="cart-details-container">
                     {
                         cart.map((prod) => (
                             <div className="cart-details" key={ prod.id }>
-                                <div className="img-name">
+                                <div className="img-name wid-25">
                                     <img src={ prod.img } alt={ prod.name } />
                                     <p>{ prod.name }</p>
                                 </div>
-                                <p className='price cart-hide'>${ prod.price }</p>
-                                <div className="quantity">
+                                <p className='price cart-hide wid-25'>${ prod.price }</p>
+                                <div className="quantity wid-25">
                                     <span onClick={ () => decrement(prod.id) }> <FaMinus /> </span>
                                     <span className='count'> { prod.qty } </span>
                                     <span onClick={ () => increment(prod.id) }> <FaPlus /> </span>
                                 </div>
-                                <p className='subtotal cart-hide'> { (prod.price * prod.qty).toFixed(2) } </p>
+                                <p className='subtotal cart-hide wid-25'> { (prod.price * prod.qty).toFixed(2) } </p>
                                 <button className='trash-btn'
                                     onClick={() => {
                                         dispatch({

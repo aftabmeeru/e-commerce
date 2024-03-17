@@ -1,7 +1,6 @@
 const prodReducer = (state, action) => {
     switch (action.type) {
         case "ADD_TO_CART": 
-
             let existingProduct = state.cart.find(currElm => currElm.id === action.payload.id);
 
             if(existingProduct) {
