@@ -19,7 +19,7 @@ const Home = () => {
             <MobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
         </div>
         <div className="brand">
-            <h1>E-commerce</h1>
+            <h1>Furniture.</h1>
         </div>
         <div className="menu-list">
             <div className="links">

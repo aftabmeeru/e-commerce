@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import mission from '../Assets/ecom-mission.jpg';
+import vision from '../Assets/ecom-vision.jpg';
+import history from '../Assets/ecom-history.jpg';
 import '../Styles/Home.scss';
 
 const Home = () => {
@@ -55,17 +58,23 @@ const Home = () => {
             </div>
             <div className="MVH-container">
                 <div className="mvh">
-                    <div className="symbol"></div>
+                    <div className="symbol">
+                        <img src={ mission } alt="mission" />
+                    </div>
                     <h2>Mission</h2>
                     <p>We are dedicated to offering only the highest quality products sourced from trusted brands and reputable sellers</p>
                 </div>
                 <div className="mvh">
-                    <div className="symbol"></div>
+                    <div className="symbol">
+                        <img src={ vision } alt="vision" />
+                    </div>
                     <h2>Vision</h2>
                     <p>We believe in the power of community to enrich the shopping experience and foster meaningful connections among like-minded individuals.</p>
                 </div>
                 <div className="mvh">
-                    <div className="symbol"></div>
+                    <div className="symbol">
+                        <img src={ history } alt="history" />
+                    </div>
                     <h2>History</h2>
                     <p>Over the years, we have earned a reputation as a trusted and reliable brand known for our unwavering commitment to quality, authenticity, and customer satisfaction.</p>
                 </div>
