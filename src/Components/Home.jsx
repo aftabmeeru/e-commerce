@@ -16,7 +16,7 @@ const Home = () => {
         <div className="content">
             <h1>Design Your</h1>
             <h1>Comfort Zone</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, at sed omnis corporis doloremque possimus velit! Repudiandae nisi odit, aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis alias?</p>
+            <p>Transform your living space into a sanctuary with our range of home decor, furniture, kitchen essentials, and more. Create a cozy ambiance, organize your space efficiently, and add personal touches that reflect your unique style.</p>
             <button onClick={ shopNow } >shop now</button>
         </div>
         <div className="banner">
@@ -50,24 +50,24 @@ const Home = () => {
             <div className="custom-content">
                 <h1>Custom Furniture <br />Built Only For You</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum debitis consectetur reprehenderit non aliquam voluptates dolore aut vero consequuntur.    
+                With a vast selection of products from trusted brands and reliable sellers, we strive to make online shopping convenient, enjoyable, and secure for you.    
                 </p>
             </div>
             <div className="MVH-container">
                 <div className="mvh">
                     <div className="symbol"></div>
                     <h2>Mission</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi</p>
+                    <p>We are dedicated to offering only the highest quality products sourced from trusted brands and reputable sellers</p>
                 </div>
                 <div className="mvh">
                     <div className="symbol"></div>
                     <h2>Vision</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi</p>
+                    <p>We believe in the power of community to enrich the shopping experience and foster meaningful connections among like-minded individuals.</p>
                 </div>
                 <div className="mvh">
                     <div className="symbol"></div>
                     <h2>History</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi</p>
+                    <p>Over the years, we have earned a reputation as a trusted and reliable brand known for our unwavering commitment to quality, authenticity, and customer satisfaction.</p>
                 </div>
             </div>
         </div>
